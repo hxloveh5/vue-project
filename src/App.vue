@@ -6,19 +6,19 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-  	return {
-  		message: 'hello world'
-  	}
-  },
-  methods: {
-  	handleClick () {
-  		this.message = 'bey world'
-  	}
+  export default {
+    name: 'app',
+    data () {
+      return {
+        message: 'hello world'
+      }
+    },
+    methods: {
+      handleClick () {
+        this.message = 'bey world'
+      }
+    }
   }
-}
 </script>
 
 <style scoped>
