@@ -9,6 +9,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',	
-  components: { App }	
+  template: '<App/>',	//组件
+  components: { App }	//声明注册一个组件
 })
