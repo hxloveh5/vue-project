@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    
-    <router-view/>
+    <div class="wang" @click = "handleClick">{{message}}</div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+  	return {
+  		message: 'hello everyone'
+  	}
+  },
+  methods: {
+  	handleClick () {
+  		this.message = 'byebye everyone'
+  	}
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+	.wang {
+		color: red;
+	}
 </style>
