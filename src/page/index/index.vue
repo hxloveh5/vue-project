@@ -6,35 +6,86 @@
     <div class="city"><span class="position">乌鲁木器大</span></div>
   </header>
   <swiper :options="swiperOption">
-    <swiper-slide>
+    <swiper-slide v-for="item in swiperInfo" :key="item.id">
       <div class="swiper-img-con">
-        <img class="swiper-img" src="http://img1.qunarzz.com/piao/fusion/1711/5a/cb4a0ccffeb99b02.jpg_640x200_1b0b75b1.jpg" />
+        <img class="swiper-img" :src="item.imgUrl" />
       </div>
       
     </swiper-slide>
-    <swiper-slide>
-      <div class="swiper-img-con">
-      <img class="swiper-img" src="http://img1.qunarzz.com/piao/fusion/1712/d1/73dc10b5cd320202.jpg_640x200_02a40951.jpg" />
+    <div class="swiper-pagination"  slot="pagination"></div>
+  </swiper>
+
+  <swiper :options="iconsOption">
+    <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
+      <div class="icon-wrapper">
+        <div v-for="item in pageInfo" :key="item.id" class="icon-item">
+          <div class="icon-img-con">
+          <img class="icon-img" :src="item.imgUrl" />
+          <div class="title" v-text="item.title"></div>
+          </div>
+        </div>
       </div>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
+  <ul class="towli">
+    <li>定位失败</li>
+    <li>5折泡温泉</li>
+  </ul>
 </div>
 </template>
 
 <script>
   export default {
     name: 'Index',
-  	  data () {
-        return {
-          swiperOption: {
-          	direction: 'horizontal',
-            autoplay: 1000,
-            loop: true
-          }
+    data () {
+      return {
+        swiperInfo: [],
+        iconsInfo: [],
+        swiperOption: {
+          autoplay: 10000,
+          pagination: '.swiper-pagination',
+          loop: true,
+          initialSlide: 1
+        },
+        iconsOption: {
+          pagination: '.swiper-pagination',
+          initialSlide: 0
         }
       }
-   } 
+    },
+
+    computed: {
+      pages () {
+        const pages = []
+        this.iconsInfo.forEach((value, index) => {
+          let page = Math.floor(index / 8)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(value)
+        })
+        return pages
+      }
+    },
+
+    methods: {
+      getIndexData () {
+        this.$http.get('/static/index.json')
+        .then(this.handleGetDataSucc.bind(this))
+      },
+      handleGetDataSucc (res) {
+        const body = res.body
+        if (body && body.data && body.data.swiper) {
+          this.swiperInfo = body.data.swiper
+          this.iconsInfo = body.data.icons
+        }
+      }
+    },
+    created () {
+      this.getIndexData()
+    }
+  }
 </script>
 <style scoped>
   .header{
@@ -65,7 +116,7 @@
   	text-align: left;
   }
   .position{
-    width:0.65rem;
+    width:0.85rem;
     display:block;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -90,5 +141,30 @@
   }
   .swiper-img{
     width:100%;
+  }
+  .icon-wrapper{
+    height:3.8rem;
+  }
+  .icon-item {
+    box-sizing: border-box;
+    width:25%;
+    float:left;
+    padding:0rem .6rem;
+    margin-top:.4rem;
+  }
+  .icon-img-con{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon-img {
+    width:100%;
+  }
+  .title{
+    padding-top:.2rem;
+    white-space: nowrap;
+    font-size:.28rem;
+    text-align:center;
   }
 </style>

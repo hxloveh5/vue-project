@@ -1735,10 +1735,6 @@ dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom7@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.1.tgz#a8a2c802cf17c20b051d9414143061472201a233"
-
 domain-browser@^1.1.1:
   version "1.1.7"
   resolved "http://registry.npm.taobao.org/domain-browser/download/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
@@ -3714,7 +3710,7 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "http://registry.npm.taobao.org/oauth-sign/download/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -5161,11 +5157,9 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-swiper@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.0.7.tgz#89175c2a23d86622eda8344740c24a3701a6b270"
-  dependencies:
-    dom7 "^2.0.1"
+swiper@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-3.4.2.tgz#39d6b410b1a39833e1f72d3b72999df5f5e38392"
 
 table@^3.7.8:
   version "3.8.3"
@@ -5486,12 +5480,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-awesome-swiper@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-3.0.6.tgz#546aa9a2775471e1dfa6ca9fd7e958aaa99ee1ea"
+vue-awesome-swiper@2.6.7:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-2.6.7.tgz#23b12cf107503305c267df3c7c2903fb39896cd0"
   dependencies:
-    object-assign "^4.1.1"
-    swiper "^4.0.7"
+    swiper "^3.4.2"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
