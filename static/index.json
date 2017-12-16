@@ -1,0 +1,75 @@
+{
+ "ret": true,
+  "data": {
+	"swiper": [{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/cd/5ff8869f365e7e02.jpg_640x200_097b1798.jpg"
+  }, {
+  	  "id": "0002",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1710/f5/57137c621d75ba02.jpg_640x200_b984ddf7.jpg"
+   
+  },{
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/5a/cb4a0ccffeb99b02.jpg_640x200_1b0b75b1.jpg"
+  },{
+      "id": "0004",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1712/56/cc09a2717375e302.jpg_640x200_9cf5e3a8.jpg"
+  },{
+      "id": "0005",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1707/90/2ab6fd356529aa02.jpg_640x200_5a7251a0.jpg"
+  }],
+  "icons": [{
+      "id": "0001",
+      "imgUrl": "/src/components/images/IMG_0131.PNG"
+    },{
+      "id": "0002",
+      "imgUrl": "./src/components/images/IMG_0132.PNG"
+    },{
+      "id": "0003",
+      "imgUrl": "/src/components/images/IMG_0133.PNG"
+    },{
+      "id": "0004",
+      "imgUrl": "/src/components/images/IMG_0134.PNG"
+    },{
+      "id": "0005",
+      "imgUrl": "/src/components/images/IMG_0135.PNG"
+    },{
+      "id": "0006",
+      "imgUrl": "/src/components/images/IMG_0136.PNG"
+    },{
+      "id": "0007",
+      "imgUrl": "/src/components/images/IMG_0137.PNG"
+    },{
+      "id": "0008",
+      "imgUrl": "/src/components/images/IMG_0138.PNG"
+    },{
+      "id": "0009",
+      "imgUrl": "/src/components/images/IMG_0139.PNG"
+    },{
+      "id": "0010",
+      "imgUrl": "/src/components/images/IMG_0140.PNG"
+    },{
+      "id": "0011",
+      "imgUrl": "/src/components/images/IMG_0141.PNG"
+    },{
+      "id": "0012",
+      "imgUrl": "/src/components/images/IMG_0142.PNG"
+    },{
+      "id": "0013",
+      "imgUrl": "/src/components/images/IMG_0143.PNG"
+    },{
+      "id": "0014",
+      "imgUrl": "/src/components/images/IMG_0144.PNG"
+    },{
+      "id": "0015",
+      "imgUrl": "/src/components/images/IMG_0145.PNG"
+    },{
+        "id": "0016",
+      "imgUrl": "/src/components/images/IMG_0146.PNG"
+  },{
+      "id": "0017",
+      "imgUrl": "/src/components/images/IMG_0146.PNG"
+  },{
+  }]
+ }
+}
