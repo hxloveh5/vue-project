@@ -14,62 +14,111 @@
   },{
       "id": "0004",
       "imgUrl": "http://img1.qunarzz.com/piao/fusion/1712/56/cc09a2717375e302.jpg_640x200_9cf5e3a8.jpg"
+      
   },{
       "id": "0005",
       "imgUrl": "http://img1.qunarzz.com/piao/fusion/1707/90/2ab6fd356529aa02.jpg_640x200_5a7251a0.jpg"
   }],
   "icons": [{
       "id": "0001",
-      "imgUrl": "/src/components/images/IMG_0131.PNG"
+      "imgUrl": "/src/components/images/IMG_0131.PNG",
+      "title":"景点门票"
     },{
       "id": "0002",
-      "imgUrl": "./src/components/images/IMG_0132.PNG"
+      "imgUrl": "./src/components/images/IMG_0132.PNG",
+      "title":"上海迪士尼"
     },{
       "id": "0003",
-      "imgUrl": "/src/components/images/IMG_0133.PNG"
+      "imgUrl": "/src/components/images/IMG_0133.PNG",
+      "title":"动植物园"
     },{
       "id": "0004",
-      "imgUrl": "/src/components/images/IMG_0134.PNG"
+      "imgUrl": "/src/components/images/IMG_0134.PNG",
+      "title":"一日游"
     },{
       "id": "0005",
-      "imgUrl": "/src/components/images/IMG_0135.PNG"
+      "imgUrl": "/src/components/images/IMG_0135.PNG",
+      "title":"必游榜单"
     },{
       "id": "0006",
-      "imgUrl": "/src/components/images/IMG_0136.PNG"
+      "imgUrl": "/src/components/images/IMG_0136.PNG",
+      "title":"环球金融中心"
     },{
       "id": "0007",
-      "imgUrl": "/src/components/images/IMG_0137.PNG"
+      "imgUrl": "/src/components/images/IMG_0137.PNG",
+      "title":"全部"
     },{
       "id": "0008",
-      "imgUrl": "/src/components/images/IMG_0138.PNG"
+      "imgUrl": "/src/components/images/IMG_0138.PNG",
+      "title":"景点门票"
     },{
       "id": "0009",
-      "imgUrl": "/src/components/images/IMG_0139.PNG"
+      "imgUrl": "/src/components/images/IMG_0139.PNG",
+      "title":"景点门票"
     },{
       "id": "0010",
-      "imgUrl": "/src/components/images/IMG_0140.PNG"
+      "imgUrl": "/src/components/images/IMG_0140.PNG",
+      "title":"景点门票"
     },{
       "id": "0011",
-      "imgUrl": "/src/components/images/IMG_0141.PNG"
+      "imgUrl": "/src/components/images/IMG_0141.PNG",
+      "title":"景点门票"
     },{
       "id": "0012",
-      "imgUrl": "/src/components/images/IMG_0142.PNG"
+      "imgUrl": "/src/components/images/IMG_0142.PNG",
+      "title":"景点门票"
     },{
       "id": "0013",
-      "imgUrl": "/src/components/images/IMG_0143.PNG"
+      "imgUrl": "/src/components/images/IMG_0143.PNG",
+      "title":"景点门票"
     },{
       "id": "0014",
-      "imgUrl": "/src/components/images/IMG_0144.PNG"
+      "imgUrl": "/src/components/images/IMG_0144.PNG",
+      "title":"景点门票"
     },{
       "id": "0015",
-      "imgUrl": "/src/components/images/IMG_0145.PNG"
+      "imgUrl": "/src/components/images/IMG_0145.PNG",
+      "title":"景点门票"
     },{
         "id": "0016",
-      "imgUrl": "/src/components/images/IMG_0146.PNG"
+      "imgUrl": "/src/components/images/IMG_0146.PNG",
+      "title":"景点门票"
   },{
       "id": "0017",
-      "imgUrl": "/src/components/images/IMG_0146.PNG"
+      "imgUrl": "/src/components/images/IMG_0146.PNG",
+      "title":"景点门票"
   },{
-  }]
+  }],
+   "hot":[{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg",
+      "title": "故宫",
+      "describe": "东方宫殿建筑代表，世界宫殿建筑典范",
+      "price": "20"
+    },{
+      "id": "0002",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_140x140_abb362a7.jpg",
+      "title": "南山滑雪场",
+      "describe": "北京专业级滑雪圣地",
+      "price": "97"
+    },{
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg",
+      "title": "故宫",
+      "describe": "东方宫殿建筑代表，世界宫殿建筑典范级滑雪圣地北京专业级滑雪圣地北京专业级",
+      "price": "20"
+    },{
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg",
+      "title": "故宫",
+      "describe": "东方宫殿建筑代表，世界宫殿建筑典范级滑雪圣地北京专业级滑雪圣地北京专业级",
+      "price": "20"
+      }],
+    "go": [{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
+      "title": "温泉北京",
+      "describe": "细数北京温泉，温暖你的冬天"
+    }]
  }
 }
