@@ -25,38 +25,12 @@
 			<div class="hot-citys" v-for="item in cityInfo" :key="item.id" v-text="item.title"></div>
 		</div>
 		<ul class="list">
-			<li>A</li>
-			<li>B</li>
-			<li>C</li>
-			<li>D</li>
-			<li>E</li>
-			<li>F</li>
-			<li>A</li>
-			<li>G</li>
-			<li>H</li>
-			<li>I</li>
-			<li>J</li>
-			<li>K</li>
-			<li>L</li>
-			<li>M</li>
-			<li>N</li>
-			<li>O</li>
-			<li>P</li>
-			<li>Q</li>
-			<li>R</li>
-			<li>S</li>
-			<li>T</li>
-			<li>U</li>
-			<li>V</li>
-			<li>W</li>
-			<li>X</li>
-			<li>Y</li>
-			<li>Z</li>
+			<li v-for="item in listsInfo" :key="item.id" v-text="item.title" @click="handleClickWord"></li>
 		</ul>
-		<div v-for="item in listsInfo" :key="item.id">
-		  <div class="your-address" v-text="item.word"></div>
-		  <ul class="lists">
-		  	<li v-for="(item, index) in listsInfo" :key="item.index"></li>
+		<div v-for="item in listsInfo" :key="item.title">
+		  <div class="your-address" v-text="item.title" ref="getContent"></div>
+		  <ul class="lists" >
+		  	<li v-for="item in item.name" :key="item.title" v-text="item" class="lilists"></li>
 		  </ul>
 		</div>
 	</div>
@@ -81,15 +55,29 @@
         const body = res.body
         if (body && body.data && body.data.swiper) {
           this.cityInfo = body.data.citys
-          this.listsInfo = body.data.citylist[0].lista
-          console.log(body.data.citylist[0])
+          this.listsInfo = body.data.citylist
+        }
+      },
+
+      handleClickWord (e) {
+        const ele = event.currentTarget.innerHTML
+        this.getEleSucc(ele)
+      },
+
+      getEleSucc (ele) {
+        const element = this.$refs.getContent
+        for (var i = 0; i < element.length; i++) {
+          const bindone = element[i].innerHTML
+          if (bindone === ele) {
+            window.scrollTo(0, element[i].offsetTop - 40)
+          }
         }
       }
     },
     created () {
       this.getIndexData()
     }
-  }
+}
 </script>
 <style scoped>
 	
@@ -194,5 +182,11 @@
 		background:transparent;
 		text-align:center;
 		color:#4eacc5;
+	}
+	.lilists{
+		height:.65rem;
+		padding-left:.26rem;
+		line-height:.65rem;
+		border-top:0.01rem solid #eee;
 	}
 </style>
