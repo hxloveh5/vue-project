@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index/index'
+
 import City from '@/page/index/city'
 import Linkbank from '@/page/index/linkbank'
 import List from '@/page/list/list'
+import Order from '@/page/order/order'
 
 Vue.use(Router)
 
@@ -25,9 +27,15 @@ export default new Router({
       component: Linkbank
     },
     {
+
       path: '/list',
       name: 'list',
       component: List
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: Order
     }
   ]
 })
