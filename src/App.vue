@@ -1,5 +1,7 @@
 <template>
+<keep-alive>
   <router-view></router-view>
+ </keep-alive>
 </template>
 
 <script>
@@ -7,7 +9,6 @@
       name: 'app'
     }
 </script>
-
 <style scoped>
 
 </style>
