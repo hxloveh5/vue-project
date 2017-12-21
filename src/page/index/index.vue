@@ -48,7 +48,7 @@
       <li class="lithree"><span class="spanone">￥</span><span v-text="item.price" class="spantow"></span><span class="spanthree">起</span></li>
     </ul>
   </div>
-  <h2 class="more"><a class="morea" href="#">查看多有商品</a></h2>
+  <h2 class="more">查看更多商品</h2>
   <h1 class="biaotitow">周末去哪</h1>
   <div class="go" v-for="item in goInfo" :key="item.id">
     <div class="go-img"><img :src="item.imgUrl" /></div>
