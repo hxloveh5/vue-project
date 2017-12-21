@@ -3,7 +3,7 @@
   <header class="header">
     <div class="back iconfont">&#xe624;</div>
     <div class="search"><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
-    <div class="city"><span class="position">乌鲁木器大</span></div>
+    <div class="city"><span class="position">乌鲁木齐</span></div>
   </header>
   <swiper :options="swiperOption">
     <swiper-slide v-for="item in swiperInfo" :key="item.id">
