@@ -19,9 +19,9 @@
     <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
       <div class="icon-wrapper">
         <div v-for="item in pageInfo" :key="item.id" class="icon-item">
-          <div class="icon-img-con">
-          <img class="icon-img" :src="item.imgUrl" />
-          <div class="title" v-text="item.title"></div>
+          <div class="allcon">
+            <img class="icon-img" :src="item.imgUrl" />
+            <div class="title" v-text="item.title"></div>
           </div>
         </div>
       </div>
@@ -49,14 +49,21 @@
     </ul>
   </div>
   <h2 class="more">查看更多商品</h2>
-  <h1 class="biaotitow">周末去哪</h1>
-  <div class="go" v-for="item in goInfo" :key="item.id">
-    <div class="go-img"><img :src="item.imgUrl" /></div>
-    <ul class="go-right">
-      <li class="lione" v-text="item.title"></li>
-      <li class="litow" v-text="item.describe"></li>
-    </ul>
+
+  <div class="wrap-all">
+    <h1 class="biaotitow">周末去哪</h1>
+    <div class="go" v-for="item in goInfo" :key="item.id">
+        <a href="javascript:;">
+          <div class="go-img"><img :src="item.imgUrl" /></div>
+          <ul class="go-right">
+            <li class="lione" v-text="item.title"></li>
+            <li class="litow" v-text="item.describe"></li>
+          </ul>
+        </a>  
+    </div>
   </div>
+
+
   <div class="zi">
     <span class="piao-price">票面价</span>是指通过景区指定窗口售卖的纸质门票上标注的价格
   </div>
@@ -111,7 +118,7 @@
     },
     methods: {
       getIndexData () {
-        this.$http.get('/api/index.json')
+        this.$http.get('/static/index.json')
         .then(this.handleGetDataSucc.bind(this))
       },
       handleGetDataSucc (res) {
@@ -163,6 +170,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color:#fff;
   }
   .city::after{
     content:"";
@@ -305,11 +313,7 @@
     background:#f5f5f5;
   }
   .go{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height:4.04rem;
-    margin-bottom:.15rem;
+    width:100%;
   }
   .go-img{
     height: 0;
@@ -321,9 +325,10 @@
   }
   .go-right{
     height:.62rem;
-    padding:.08rem;
+    padding-bottom:.26rem;
   }
   .go-right .lione{
+    padding-top:.08rem;
     color:#1f1f1f;
     font-size:.28rem;
   }
@@ -335,6 +340,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+  }
+  .wrapall{
+    width:100%;
   }
   .zi{
     height:.3rem;
