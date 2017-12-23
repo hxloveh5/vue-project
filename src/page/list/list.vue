@@ -86,7 +86,7 @@
       return {
         listInfo: [],
         flag: true,
-        isActive:false
+        isActive: false
       }
     },
     methods: {
@@ -95,41 +95,40 @@
         .then(this.handleGetDataSucc.bind(this))
       },
       handleGetDataSucc (res) {
-        const body = res.body 
+        const body = res.body
         if (body && body.data && body.data.list) {
           this.listInfo = body.data.list
         }
       },
-      handleClickClass () {   
-          if(this.flag == true)
-        this.flag = false
-          else{
-            this.flag = true
+      handleClickClass () {
+        if (this.flag === true) {
+          this.flag = false
+        } else {
+          this.flag = true
         }
       },
       handleClickPull () {
-          if(this.isActive == true)
+        if (this.isActive === true) {
           this.isActive = false
-          else{
-              this.isActive = true
-          }
+        } else {
+          this.isActive = true
+        }
       }
     },
     created () {
       this.getListData()
     },
     mounted () {
-    //const listLength = this.$refs.wrapperUl.getElementByTagName('li').length;
       this.$refs.wrapperUl.style.width = document.body.clientWidth + 'px'
-      this.scroll = new BScroll('.wrapper',{scrollX: true})
+      this.scroll = new BScroll('.wrapper', {scrollX: true})
     },
     watch: {
       listInfo () {
         this.$nextTick(() => {
           this.scroll.refresh()
         })
-        setTimeout(()=>{
-            this.scroll.refresh()
+        setTimeout(() => {
+          this.scroll.refresh()
         }, 2000)
       }
     }

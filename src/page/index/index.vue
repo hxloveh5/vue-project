@@ -1,5 +1,5 @@
 <template>
-<div>	
+<div> 
   <header class="header">
     <div class="back iconfont">&#xe624;</div>
     <div class="search"><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
@@ -96,7 +96,6 @@
         }
       }
     },
-
     computed: {
       pages () {
         const pages = []
@@ -110,10 +109,9 @@
         return pages
       }
     },
-
     methods: {
       getIndexData () {
-        this.$http.get('/static/index.json')
+        this.$http.get('/api/index.json')
         .then(this.handleGetDataSucc.bind(this))
       },
       handleGetDataSucc (res) {
@@ -133,20 +131,20 @@
 </script>
 <style scoped>
   .header{
-  	display: flex;
-  	background: #05bad5;
-  	color: #fff;
+    display: flex;
+    background: #05bad5;
+    color: #fff;
   }
   .back{
-  	width: .64rem;
-  	line-height: .86rem;
+    width: .64rem;
+    line-height: .86rem;
     text-align: center;
   }
   .search{
-  	flex: 1;
-  	margin: .14rem .18rem;
-  	background: #fff;
-  	border-radius: .1rem;
+    flex: 1;
+    margin: .14rem .18rem;
+    background: #fff;
+    border-radius: .1rem;
     color:;
   }
   .prompt {
@@ -155,9 +153,9 @@
     line-height: 0.6rem;
   }
   .city{
-  	width:1.32rem;
-  	line-height: .86rem;
-  	text-align: left;
+    width:1.32rem;
+    line-height: .86rem;
+    text-align: left;
   }
   .position{
     width:0.85rem;
@@ -289,7 +287,6 @@
   .hot .lithree .spantow{
     font-size: .4rem;
     color:#cfa072;
-
   }
   .hot .lithree .spanthree{
     font-size: .24rem;
