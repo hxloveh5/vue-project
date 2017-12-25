@@ -22,7 +22,7 @@
     <p class=" iconfont">&#xe676;</p> 
     <p >咨询</p>
    </div>
-   <h2 class="footer-right">立即支付</h2>
+   <router-link to="/order"><h2 class="footer-right">立即支付</h2></router-link>
   </div>
   <div class="mp-name">
   	<h2 class="guide">天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解</h2>
@@ -222,6 +222,7 @@
  margin: 0 auto;
  font-size: .4rem;
  color: #fff;
+ margin-left:2.7rem;
 }   
 .scenic-spot {
  overflow: hidden;

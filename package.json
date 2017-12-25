@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "better-scroll": "^1.6.0",
+    "fastclick": "^1.0.6",
     "vue": "^2.5.2",
     "vue-awesome": "^2.3.4",
     "vue-awesome-swiper": "2.6.7",

@@ -11,10 +11,12 @@ import './assets/style/iconfont2/iconfont.css'
 import VueResource from 'vue-resource'
 import VueSwiper from 'vue-awesome-swiper'
 import './assets/style/iconfont/iconfont.css'
+import FastClick from 'fastclick'
 
 Vue.config.productionTip = false
 Vue.use(VueSwiper)
 Vue.use(VueResource)
+FastClick.attach(document.body)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

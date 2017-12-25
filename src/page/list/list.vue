@@ -13,27 +13,30 @@
           <li>故宫</li>
           <li>鸟巢</li>
           <li>水立方</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li>
-          <li>颐和园</li> 
+          <li>八达岭长城</li>
+          <li>古北水镇</li>
+          <li>故宫</li>
+          <li>鸟巢</li>
+          <li>水立方</li>
+          <li>八达岭长城</li>
+          <li>古北水镇</li>
+          <li>故宫</li>
+          <li>鸟巢</li>
+          <li>水立方</li>
+          <li>八达岭长城</li>
+          <li>古北水镇</li>
+          <li>故宫</li>
+          <li>鸟巢</li>
+          <li>水立方</li>
         </ul>
-        <span class="pull iconfont" @click="handleClickPull">&#xe62d;</span>
+        <span class="pull iconfont" @click="handleClickPull"></span>
     </div>
 
   <div class="list-box">
-    <div class="list-cont" v-for="item in listInfo">
+    <div ref="scrollList">
+    <ul v-for="item in listInfo" class="list-cont">
+    <li>
+        <router-link to="/detail">
         <div><img :src="item.imgUrl" alt=""></div>
         <div v-text="item.title"></div>
         <div><span>北京出发</span><em>无自费</em><i>无购物</i></div>
@@ -42,6 +45,9 @@
         <div class="price" v-text="item.price"> 
         </div>
         <span class="upTo">起</span>
+        </router-link>
+    </li>
+    </ul>
     </div>
   </div>
 
@@ -62,7 +68,7 @@
             <i class="iconfont">&#xe61d;</i><br>
             <span>筛选</span>
             <div class="location" v-show="flag">
-                <ul class="menu1">
+                <ul class="menu2">
                     <li>一日游</li>
                     <li>文化古迹</li>
                     <li>交通运输</li>
@@ -86,7 +92,7 @@
       return {
         listInfo: [],
         flag: true,
-        isActive:false
+        isActive: false
       }
     },
     methods: {
@@ -95,7 +101,7 @@
         .then(this.handleGetDataSucc.bind(this))
       },
       handleGetDataSucc (res) {
-        const body = res.body 
+        const body = res.body
         if (body && body.data && body.data.list) {
           this.listInfo = body.data.list
         }
@@ -110,29 +116,36 @@
       handleClickPull () {
           if(this.isActive == true)
           this.isActive = false
-          else{
-              this.isActive = true
+          else
+         {
+            this.isActive = true
           }
       }
     },
     created () {
       this.getListData()
     },
+    // mounted () {
+    //   const listLength = this.$refs.wrapperUl.getElementByTagName('li').length;
+    //   this.$refs.wrapperUl.style.width = document.body.clientWidth + 'px'
+    //   this.scroll = new BScroll('.wrapper', {scrollX: true})
+    // },
+    // watch: {
+    //   listInfo () {
+    //     this.$nextTick(() => {
+    //       this.scroll.refresh()
+    //     })
+    //     setTimeout(() => {
+    //       this.scroll.refresh()
+    //     }, 2000)
+    //   }
+    // },
     mounted () {
-    //const listLength = this.$refs.wrapperUl.getElementByTagName('li').length;
-      this.$refs.wrapperUl.style.width = document.body.clientWidth + 'px'
-      this.scroll = new BScroll('.wrapper',{scrollX: true})
-    },
-    watch: {
-      listInfo () {
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-        setTimeout(()=>{
-            this.scroll.refresh()
-        }, 2000)
-      }
-    }
+    this.$nextTick( () => {
+    //   this.scroll = new BScroll(this.$refs.wrapperUl,{scrollX: true})
+      this.scroll1 = new BScroll(this.$refs.scrollList)
+    })
+  }
 }
 </script>
 
@@ -160,18 +173,19 @@
     line-height: 0.6rem;
 }
 .city{
-    width:1.32rem;
+    width:.97rem;
     line-height: .86rem;
     text-align: left;
+    margin-left:.2rem;
 }
 .position{
     width:0.85rem;
     display:block;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-.city::after{
+/* .city::after{
     content:"";
     display: block;
     width: 0px;
@@ -181,7 +195,7 @@
     position: absolute;
     right: 0.28rem;
     top: 0.36rem;
-}
+} */
 .scrollRow{
     min-width:7.5rem;
     min-height:.75rem;
@@ -191,24 +205,25 @@
     position:relative;
 }
 .scrollRow .pull{
+    content:"";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 0.1rem solid #fff;
+    border-color: #ccc transparent transparent transparent;
     position: absolute;
-    right:0.3rem;
-    top:0.3rem;
-    width:.3rem;
-    height:.5rem;
-    z-index: 2;
+    right: 0.28rem;
+    top: 0.36rem;
 }
 .scroll-cont {
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-around;
     flex-wrap: nowrap;
-    /* min-height:.52rem;  */
-    width:7.5rem;
-    /* overflow-x: scroll; */
-    overflow: scroll;
+    height:.52rem; 
+    min-width:7.5rem;
+    overflow-x: scroll;
+    /* overflow: scroll; */
 }
 .scrollRow li{
+    float:left;
     height: .52rem;
     padding:.05rem auto;
     white-space: nowrap;
@@ -216,10 +231,11 @@
     line-height: .52rem;
     padding:0 .04rem;
     margin-right:.14rem;
+    margin-bottom: .14rem;
     background: #fff;
 }
 .list-box{   
-    width:100%;
+    width:98%;
     min-height: 4rem;
     padding-top:.14rem;
     padding-left:.2rem;
@@ -322,8 +338,9 @@
 .menu1{
     width:3.1rem;
     height:100%;
-    background: #ccc;
-    position: relative;
+    background: #f4f5f7;
+    position: absolute;
+    left:0rem;
     top:-0.05rem;
 }
 .menu1 li{
